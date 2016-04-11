@@ -67,7 +67,7 @@
 <meta property="og:description" content="##排序sort的用法昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。
 ###业务场景12345678var arr = [	&amp;#123;		name: &quot;PayPal&quot;	&amp;#125;,	&amp;#123;		name: &quot;WorldPay&quot;	&amp;#125;]
 上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示WorldPay。解决这个问题可以遍历，或者是模板判断">
-<meta property="og:updated_time" content="2016-03-22T02:31:48.000Z">
+<meta property="og:updated_time" content="2016-04-11T02:23:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序sort的用法">
 <meta name="twitter:description" content="##排序sort的用法昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。
@@ -269,8 +269,9 @@
         <p>##排序sort的用法<br>昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。</p>
 <p>###业务场景<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"PayPal"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"WorldPay"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p>上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示<code>WorldPay</code>。解决这个问题可以遍历，或者是模板判断<code>name</code>处理。我觉得最好的方式是数组排序，<br><code>WorldPay</code>支付方式放在数组第一顺位，模板按顺序渲染下来即可。</p>
-<h3 id="sort-的函数用法"><a href="#sort-的函数用法" class="headerlink" title="sort 的函数用法"></a>sort 的函数用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">	</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
+<h3 id="sort-的函数用法"><a href="#sort-的函数用法" class="headerlink" title="sort 的函数用法"></a>sort 的函数用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"PayPal"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"WorldPay"</span></span><br><span class="line">	&#125;</span><br><span class="line">];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">obj1, obj2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(obj1.name == <span class="string">"WorldPay"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>用上面的办法解决问题。</p>
+<h3 id="本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。"><a href="#本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。" class="headerlink" title="本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。"></a>本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。</h3>
       
     </div>
 
@@ -404,7 +405,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -438,7 +439,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-的函数用法"><span class="nav-number">1.</span> <span class="nav-text">sort 的函数用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-的函数用法"><span class="nav-number">1.</span> <span class="nav-text">sort 的函数用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。"><span class="nav-number">2.</span> <span class="nav-text">本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
