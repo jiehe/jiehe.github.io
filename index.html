@@ -216,6 +216,108 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/13/Cookie/" itemprop="url">
+                  Cookie
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-13T17:15:02+08:00" content="2016-04-13">
+              2016-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/13/Cookie/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/Cookie/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="cookie-的增删改查"><a href="#cookie-的增删改查" class="headerlink" title="cookie 的增删改查"></a>cookie 的增删改查</h2><p>以前做<code>pc</code>端是使用<code>jquery</code>的<code>jquery.cookie</code>插件操作<code>cookie</code>，移动端就该尽量减少插件，提高响应时间，写了个操作<code>cookie</code>的模块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    getCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies[key] || <span class="string">""</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    getCookies() &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies || &#123;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    setCookie(key, value, option) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!option) option = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> config = &#123;</span><br><span class="line">            path: option.path || <span class="string">"/"</span>,</span><br><span class="line">            expired: option.expired || <span class="string">""</span>,</span><br><span class="line">            Domain: option.Domain || location.host</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">'='</span> + value + <span class="string">";expired="</span> + config.expired + <span class="string">";path="</span> + config.path + <span class="string">";Domain="</span> + config.Domain</span><br><span class="line">    &#125;,</span><br><span class="line">    removeCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setTime(date.getTime() - <span class="number">10000</span>);</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">'=remove; expires='</span> + date.toGMTString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="添加Cookie"><a href="#添加Cookie" class="headerlink" title="添加Cookie"></a>添加Cookie</h3><p>添加cookie 是 以键值的方式添加。<br>    <code>path</code>决定该<code>cookie</code>允许访问的路径，比如<code>/posts</code>那么只能是<code>/post</code>和下面的路径能访问。<br>    <code>expired</code>设置该<code>cookie</code>的过期时间， 过期后自动从浏览器删除。<br>    <code>Domain</code>决定该<code>cookie</code>允许访问的域，比如<code>.baidu.com</code> 可以被三级域名<code>www.vip.baidu.com</code>访问；而<code>baidu.com</code> 可以不能被<code>www.vip.baidu.com</code>访问。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setCookie(key, value, option) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!option) option = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> config = &#123;</span><br><span class="line">        path: option.path || <span class="string">"/"</span>,</span><br><span class="line">        expired: option.expired || <span class="string">""</span>,</span><br><span class="line">        Domain: option.Domain || location.host</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.cookie = key + <span class="string">'='</span> + value + <span class="string">";expired="</span> + config.expired + <span class="string">";path="</span> + config.path + <span class="string">";Domain="</span> + config.Domain</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>删除<code>cookie</code>是把该<code>cookie</code>的过期时间设置为已经过去的时间。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeCookie(key) &#123;</span><br><span class="line">      <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      date.setTime(date.getTime() - <span class="number">10000</span>);</span><br><span class="line">      <span class="built_in">document</span>.cookie = key + <span class="string">'=remove; expires='</span> + date.toGMTString();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="改cookie"><a href="#改cookie" class="headerlink" title="改cookie"></a>改cookie</h3><p>请直接重新设置即可</p>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>使用<code>key</code>去查找<code>cookie</code>的｀value`.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies[key] || <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/30/团队分享/" itemprop="url">
                   团队分享
                 </a>
@@ -671,7 +773,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

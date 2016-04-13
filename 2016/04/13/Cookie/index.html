@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="Cookie," />
 
 
 
@@ -57,22 +57,19 @@
 
 
 
-<meta name="description" content="##排序sort的用法昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。
-###业务场景12345678var arr = [	&amp;#123;		name: &quot;PayPal&quot;	&amp;#125;,	&amp;#123;		name: &quot;WorldPay&quot;	&amp;#125;]
-上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示WorldPay。解决这个问题可以遍历，或者是模板判断">
+<meta name="description" content="cookie 的增删改查以前做pc端是使用jquery的jquery.cookie插件操作cookie，移动端就该尽量减少插件，提高响应时间，写了个操作cookie的模块。
+1234567891011121314151617181920212223242526272829303132export default &amp;#123;    getCookie(key) &amp;#123;        var">
 <meta property="og:type" content="article">
-<meta property="og:title" content="排序sort的用法">
-<meta property="og:url" content="http://yoursite.com/2016/03/17/排序sort的用法/index.html">
+<meta property="og:title" content="Cookie">
+<meta property="og:url" content="http://yoursite.com/2016/04/13/Cookie/index.html">
 <meta property="og:site_name" content="孙少安">
-<meta property="og:description" content="##排序sort的用法昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。
-###业务场景12345678var arr = [	&amp;#123;		name: &quot;PayPal&quot;	&amp;#125;,	&amp;#123;		name: &quot;WorldPay&quot;	&amp;#125;]
-上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示WorldPay。解决这个问题可以遍历，或者是模板判断">
-<meta property="og:updated_time" content="2016-04-11T02:23:13.000Z">
+<meta property="og:description" content="cookie 的增删改查以前做pc端是使用jquery的jquery.cookie插件操作cookie，移动端就该尽量减少插件，提高响应时间，写了个操作cookie的模块。
+1234567891011121314151617181920212223242526272829303132export default &amp;#123;    getCookie(key) &amp;#123;        var">
+<meta property="og:updated_time" content="2016-04-13T09:37:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="排序sort的用法">
-<meta name="twitter:description" content="##排序sort的用法昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。
-###业务场景12345678var arr = [	&amp;#123;		name: &quot;PayPal&quot;	&amp;#125;,	&amp;#123;		name: &quot;WorldPay&quot;	&amp;#125;]
-上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示WorldPay。解决这个问题可以遍历，或者是模板判断">
+<meta name="twitter:title" content="Cookie">
+<meta name="twitter:description" content="cookie 的增删改查以前做pc端是使用jquery的jquery.cookie插件操作cookie，移动端就该尽量减少插件，提高响应时间，写了个操作cookie的模块。
+1234567891011121314151617181920212223242526272829303132export default &amp;#123;    getCookie(key) &amp;#123;        var">
 
 
 
@@ -90,7 +87,7 @@
   };
 </script>
 
-  <title> 排序sort的用法 | 孙少安 </title>
+  <title> Cookie | 孙少安 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +217,7 @@
             
             
               
-                排序sort的用法
+                Cookie
               
             
           </h1>
@@ -232,8 +229,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T10:17:22+08:00" content="2016-03-17">
-              2016-03-17
+            <time itemprop="dateCreated" datetime="2016-04-13T17:15:02+08:00" content="2016-04-13">
+              2016-04-13
             </time>
           </span>
 
@@ -243,8 +240,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/17/排序sort的用法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/17/排序sort的用法/" itemprop="commentsCount"></span>
+                <a href="/2016/04/13/Cookie/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/Cookie/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -266,12 +263,14 @@
       
 
       
-        <p>##排序sort的用法<br>昨晚遇到了一个场景，想过几种解决方案，最后觉得sort才是最好的解决方案。</p>
-<p>###业务场景<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"PayPal"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"WorldPay"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>上面这个数组返回的支付方式排序不正确， 要求显示的时候必须是先显示<code>WorldPay</code>。解决这个问题可以遍历，或者是模板判断<code>name</code>处理。我觉得最好的方式是数组排序，<br><code>WorldPay</code>支付方式放在数组第一顺位，模板按顺序渲染下来即可。</p>
-<h3 id="sort-的函数用法"><a href="#sort-的函数用法" class="headerlink" title="sort 的函数用法"></a>sort 的函数用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"PayPal"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		name: <span class="string">"WorldPay"</span></span><br><span class="line">	&#125;</span><br><span class="line">];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">obj1, obj2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(obj1.name == <span class="string">"WorldPay"</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>用上面的办法解决问题。</p>
-<h3 id="本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。"><a href="#本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。" class="headerlink" title="本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。"></a>本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。</h3>
+        <h2 id="cookie-的增删改查"><a href="#cookie-的增删改查" class="headerlink" title="cookie 的增删改查"></a>cookie 的增删改查</h2><p>以前做<code>pc</code>端是使用<code>jquery</code>的<code>jquery.cookie</code>插件操作<code>cookie</code>，移动端就该尽量减少插件，提高响应时间，写了个操作<code>cookie</code>的模块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    getCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies[key] || <span class="string">""</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    getCookies() &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies || &#123;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    setCookie(key, value, option) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!option) option = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> config = &#123;</span><br><span class="line">            path: option.path || <span class="string">"/"</span>,</span><br><span class="line">            expired: option.expired || <span class="string">""</span>,</span><br><span class="line">            Domain: option.Domain || location.host</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">'='</span> + value + <span class="string">";expired="</span> + config.expired + <span class="string">";path="</span> + config.path + <span class="string">";Domain="</span> + config.Domain</span><br><span class="line">    &#125;,</span><br><span class="line">    removeCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        date.setTime(date.getTime() - <span class="number">10000</span>);</span><br><span class="line">        <span class="built_in">document</span>.cookie = key + <span class="string">'=remove; expires='</span> + date.toGMTString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="添加Cookie"><a href="#添加Cookie" class="headerlink" title="添加Cookie"></a>添加Cookie</h3><p>添加cookie 是 以键值的方式添加。<br>    <code>path</code>决定该<code>cookie</code>允许访问的路径，比如<code>/posts</code>那么只能是<code>/post</code>和下面的路径能访问。<br>    <code>expired</code>设置该<code>cookie</code>的过期时间， 过期后自动从浏览器删除。<br>    <code>Domain</code>决定该<code>cookie</code>允许访问的域，比如<code>.baidu.com</code> 可以被三级域名<code>www.vip.baidu.com</code>访问；而<code>baidu.com</code> 可以不能被<code>www.vip.baidu.com</code>访问。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setCookie(key, value, option) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!option) option = &#123;&#125;;</span><br><span class="line">    <span class="keyword">var</span> config = &#123;</span><br><span class="line">        path: option.path || <span class="string">"/"</span>,</span><br><span class="line">        expired: option.expired || <span class="string">""</span>,</span><br><span class="line">        Domain: option.Domain || location.host</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.cookie = key + <span class="string">'='</span> + value + <span class="string">";expired="</span> + config.expired + <span class="string">";path="</span> + config.path + <span class="string">";Domain="</span> + config.Domain</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>删除<code>cookie</code>是把该<code>cookie</code>的过期时间设置为已经过去的时间。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">removeCookie(key) &#123;</span><br><span class="line">      <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">      date.setTime(date.getTime() - <span class="number">10000</span>);</span><br><span class="line">      <span class="built_in">document</span>.cookie = key + <span class="string">'=remove; expires='</span> + date.toGMTString();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="改cookie"><a href="#改cookie" class="headerlink" title="改cookie"></a>改cookie</h3><p>请直接重新设置即可</p>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><p>使用<code>key</code>去查找<code>cookie</code>的｀value`.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getCookie(key) &#123;</span><br><span class="line">        <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">        <span class="keyword">var</span> cookie = <span class="built_in">document</span>.cookie;</span><br><span class="line">        cookie.replace(<span class="regexp">/(.*?)\=(.*?)(?:;\s?|$)/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            cookies[<span class="built_in">arguments</span>[<span class="number">1</span>]] = <span class="built_in">arguments</span>[<span class="number">2</span>];</span><br><span class="line">        &#125;.bind(<span class="keyword">this</span>));</span><br><span class="line">        <span class="keyword">return</span> cookies[key] || <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -285,7 +284,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/Cookie/" rel="tag">#Cookie</a>
           
         </div>
       
@@ -294,17 +293,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/03/30/团队分享/" rel="next" title="团队分享">
+                <i class="fa fa-chevron-left"></i> 团队分享
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/30/团队分享/" rel="prev" title="团队分享">
-                团队分享 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -319,10 +314,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/17/排序sort的用法/"
-     data-title="排序sort的用法"
+        <div class="ds-share flat" data-thread-key="2016/04/13/Cookie/"
+     data-title="Cookie"
      data-content=""
-     data-url="http://yoursite.com/2016/03/17/排序sort的用法/">
+     data-url="http://yoursite.com/2016/04/13/Cookie/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -349,8 +344,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/17/排序sort的用法/"
-           data-title="排序sort的用法" data-url="http://yoursite.com/2016/03/17/排序sort的用法/">
+      <div class="ds-thread" data-thread-key="2016/04/13/Cookie/"
+           data-title="Cookie" data-url="http://yoursite.com/2016/04/13/Cookie/">
       </div>
     
   </div>
@@ -439,7 +434,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-的函数用法"><span class="nav-number">1.</span> <span class="nav-text">sort 的函数用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文主要想表达我们在用sort的时候，-大多算是两两比较来排序，-不要忘了可以确定自己的值来排序。"><span class="nav-number">2.</span> <span class="nav-text">本文主要想表达我们在用sort的时候， 大多算是两两比较来排序， 不要忘了可以确定自己的值来排序。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-的增删改查"><span class="nav-number">1.</span> <span class="nav-text">cookie 的增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加Cookie"><span class="nav-number">1.1.</span> <span class="nav-text">添加Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除cookie"><span class="nav-number">1.2.</span> <span class="nav-text">删除cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改cookie"><span class="nav-number">1.3.</span> <span class="nav-text">改cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查"><span class="nav-number">1.4.</span> <span class="nav-text">查</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
