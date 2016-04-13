@@ -61,7 +61,7 @@
 2叉叉 状态码代表成功2叉叉 状态码代表请求成功。要掌握的是200、200(from cached)。
 
 200 代表成功。
-200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间(Expires)，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高">
+200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间Expires，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应">
 <meta property="og:type" content="article">
 <meta property="og:title" content="http 状态码">
 <meta property="og:url" content="http://yoursite.com/2016/04/13/http-status-code/index.html">
@@ -70,15 +70,15 @@
 2叉叉 状态码代表成功2叉叉 状态码代表请求成功。要掌握的是200、200(from cached)。
 
 200 代表成功。
-200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间(Expires)，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高">
-<meta property="og:updated_time" content="2016-04-13T14:41:31.000Z">
+200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间Expires，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应">
+<meta property="og:updated_time" content="2016-04-13T14:57:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http 状态码">
 <meta name="twitter:description" content="基本状态码从事web开发，要懂得基本的http状态码的含义，有利于排查问题，定位问题源头。从而解决问题。
 2叉叉 状态码代表成功2叉叉 状态码代表请求成功。要掌握的是200、200(from cached)。
 
 200 代表成功。
-200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间(Expires)，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高">
+200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间Expires，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应">
 
 
 
@@ -276,14 +276,22 @@
 <h3 id="2叉叉-状态码代表成功"><a href="#2叉叉-状态码代表成功" class="headerlink" title="2叉叉 状态码代表成功"></a>2叉叉 状态码代表成功</h3><p>2叉叉 状态码代表请求成功。要掌握的是200、200(from cached)。</p>
 <ul>
 <li>200 代表成功。</li>
-<li>200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间(Expires)，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应速度和节省带宽。</li>
+<li>200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间<code>Expires</code>，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应速度和节省带宽。过期时间<code>Expires</code>是<code>http1.0</code>的方法，<code>http1.1</code>是使用<code>Cache-Control:max-age=3600</code>去设置过期时间的。<blockquote>
+<p><code>Expires</code>过期时间是一个具体的日期(GTM时间格式)，比如<code>Expires:Wed, 13 Apr 2017 15:05:00 GMT</code>就是2017年4月份才会过期；<code>max-age</code>过期时间是访问后的多少秒后过期，比如<code>Cache-Control:max-age=3600</code>就是一个小时后过期。</p>
+</blockquote>
+</li>
 <li>其他 2叉叉 略。</li>
 </ul>
 <h3 id="3叉叉-状态码代表重定向"><a href="#3叉叉-状态码代表重定向" class="headerlink" title="3叉叉 状态码代表重定向"></a>3叉叉 状态码代表重定向</h3><p>3叉叉 状态码代表重定向。要掌握的是304(Not Modified)、302。</p>
 <ul>
 <li>304(Not Modified)重定向也是针对静态资源请求， 代表静态资源之前请求过，在响应头设置了最后修改时间(Last-Modified)，当再次请求的时候在请求头带(If-Modified-Since: Last-Modified)最后修改时间去询问服务器静态资源有没有修改过，没有修改过就返回 304(Not Modified)让浏览器读取本地缓存，提高响应速度和节省带宽。这是<code>http1.0</code>的方式， <code>http1.1</code>也兼容。</li>
-<li><code>http1.1</code> 304(Not Modified)重定向的方式有所扩展， 静态资源之前请求过，在响应头设置了一个标示(Etag)，当再次请求的时候在请求头带(If-None-Match: Etag)标示去询问服务器静态资源有没有修改过，没有修改过就返回 304(Not Modified)让浏览器读取本地缓存，提高响应速度和节省带宽。</li>
-<li>302 重定向是后台重定向浏览器的链接， 当请求返回 302 状态码的时候，就要留意响应头里面的<code>Location</code>的链接， 该请求会被重定向到<code>Location</code>的链接。</li>
+<li><p><code>http1.1</code> 304(Not Modified)重定向的方式有所扩展， 静态资源之前请求过，在响应头设置了一个标示(Etag)，当再次请求的时候在请求头带(If-None-Match: Etag)标示去询问服务器静态资源有没有修改过，没有修改过就返回 304(Not Modified)让浏览器读取本地缓存，提高响应速度和节省带宽。</p>
+<blockquote>
+<p>last-modified 侧重于文件 ，而动态程序生成的页面推荐是Etag。</p>
+</blockquote>
+</li>
+<li><p>302 重定向是后台重定向浏览器的链接， 当请求返回 302 状态码的时候，就要留意响应头里面的<code>Location</code>的链接， 该请求会被重定向到<code>Location</code>的链接。</p>
+</li>
 </ul>
 <h3 id="4叉叉-状态码代表无权访问"><a href="#4叉叉-状态码代表无权访问" class="headerlink" title="4叉叉 状态码代表无权访问"></a>4叉叉 状态码代表无权访问</h3><p>4叉叉 状态码代表无权访问。要掌握的是402、403、404， 都是代表请求方无权访问。</p>
 <ul>
