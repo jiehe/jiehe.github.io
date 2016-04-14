@@ -71,7 +71,7 @@
 
 200 代表成功。
 200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间Expires，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应">
-<meta property="og:updated_time" content="2016-04-13T14:57:46.000Z">
+<meta property="og:updated_time" content="2016-04-14T12:36:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="http 状态码">
 <meta name="twitter:description" content="基本状态码从事web开发，要懂得基本的http状态码的含义，有利于排查问题，定位问题源头。从而解决问题。
@@ -277,7 +277,7 @@
 <ul>
 <li>200 代表成功。</li>
 <li>200(from cache) 代表静态资源之前请求过，在响应头设置了过期时间<code>Expires</code>，当再次请求的时候没有过期就会直接读取本地缓存，不与服务器发生请求，提高响应速度和节省带宽。过期时间<code>Expires</code>是<code>http1.0</code>的方法，<code>http1.1</code>是使用<code>Cache-Control:max-age=3600</code>去设置过期时间的。<blockquote>
-<p><code>Expires</code>过期时间是一个具体的日期(GTM时间格式)，比如<code>Expires:Wed, 13 Apr 2017 15:05:00 GMT</code>就是2017年4月份才会过期；<code>max-age</code>过期时间是访问后的多少秒后过期，比如<code>Cache-Control:max-age=3600</code>就是一个小时后过期。</p>
+<p><code>Expires</code>过期时间是一个具体的日期(GTM时间格式)，比如<code>Expires:Wed, 13 Apr 2017 15:05:00 GMT</code>就是2017年4月份才会过期；<code>max-age</code>过期时间是访问后的多少秒后过期，比如<code>Cache-Control:max-age=3600</code>就是一个小时后过期。<br>有一种恶心的情况也可以200(from cache)。当你是使用浏览器回退按钮（或者history.go(-1)）并且接口<code>api</code>没有做参数变化(时间戳)处理，那么这个接口不管有没有设置<code>Expires, max-age</code>浏览器都是读取本地缓存，返回200(from cache)。</p>
 </blockquote>
 </li>
 <li>其他 2叉叉 略。</li>
